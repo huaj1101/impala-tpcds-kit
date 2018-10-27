@@ -5,23 +5,23 @@ The official and latest TPC-DS tools and specification can be found at
 
 ## Step 0: Environment Setup
 
-Install Java JDK and Maven if need be:
+Install the necessary packages:
 
 ```
-sudo yum -y install java-1.8.0-openjdk-devel maven
-```
-
-Install the necessary development tools:
-
-```
-sudo yum -y install git gcc make flex bison byacc curl unzip patch
+sudo apt install openjdk-8-jdk-headless maven git gcc make flex bison byacc curl unzip patch
 ```
 
 ## Step 1: Generate Data
 
-Data generation is done via a MapReduce wrapper around TPC-DS `dsdgen`.  See `tpcds-gen/README.md` for more details on the commands to generate the flat files.
+```
+git clone https://github.com/huaj1101/impala-tpcds-kit.git
+cd impala-tpcds-kit/tpcds-gen
+make
+hadoop jar target/tpcds-gen-1.0-SNAPSHOT.jar -d /tmp/tpc-ds/sf100/ -p 100 -s 100
+```
 
 ## Step 2: Load Data
+
 
 Adjust the source/text and target/Parquet schema names and flat file paths in the sql files found in the `scripts/` directory.  See the comments at the top of each.
 

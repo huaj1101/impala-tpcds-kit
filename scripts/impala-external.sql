@@ -1,10 +1,10 @@
 --
 -- modify this file to contain the correct:
--- * schema name (currently tpcds_10000_text)
--- * location path (currently /tmp/tpc-ds/sf10000)
+-- * schema name (currently tpcds_100_text)
+-- * location path (currently /tmp/tpc-ds/sf100)
 
-create schema if not exists tpcds_10000_text;
-use tpcds_10000_text;
+create schema if not exists tpcds_100_text;
+use tpcds_100_text;
 
 create external table call_center (
   cc_call_center_sk int,
