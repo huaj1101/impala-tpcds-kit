@@ -17,7 +17,7 @@ sudo apt install openjdk-8-jdk-headless maven git gcc make flex bison byacc curl
 git clone https://github.com/huaj1101/impala-tpcds-kit.git
 cd impala-tpcds-kit/tpcds-gen
 make
-hadoop jar target/tpcds-gen-1.0-SNAPSHOT.jar -d /tmp/tpc-ds/sf100/ -p 100 -s 100
+hadoop jar target/tpcds-gen-1.0-SNAPSHOT.jar -d /tmp/tpc-ds/sf/ -p 100 -s 100
 ```
 
 ## Step 2: Load Data
@@ -40,7 +40,19 @@ impala-shell -f impala-parquet.sql
 Load Parquet tables and compute stats:
 
 ```
-impala-shell -f impala-insert.sql
+impala-shell -f impala-insert_parquet.sql
+```
+
+Create Kudu tables:
+
+```
+impala-shell -f impala-kudu.sql
+```
+
+Load Kudu tables and compute stats:
+
+```
+impala-shell -f impala-insert_kudu.sql
 ```
 
 ## Step 3: Run Queries

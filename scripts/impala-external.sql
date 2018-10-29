@@ -1,10 +1,10 @@
 --
 -- modify this file to contain the correct:
--- * schema name (currently tpcds_100_text)
--- * location path (currently /tmp/tpc-ds/sf100)
+-- * schema name (currently tpcds_text)
+-- * location path (currently /tmp/tpc-ds/sf)
 
-create schema if not exists tpcds_100_text;
-use tpcds_100_text;
+create schema if not exists tpcds_text;
+use tpcds_text;
 
 create external table call_center (
   cc_call_center_sk int,
@@ -41,7 +41,7 @@ create external table call_center (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/call_center'
+location '/tmp/tpc-ds/sf/call_center'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -58,7 +58,7 @@ create external table catalog_page (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/catalog_page'
+location '/tmp/tpc-ds/sf/catalog_page'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -93,7 +93,7 @@ create external table catalog_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/catalog_returns'
+location '/tmp/tpc-ds/sf/catalog_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -135,7 +135,7 @@ create external table catalog_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/catalog_sales'
+location '/tmp/tpc-ds/sf/catalog_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -161,7 +161,7 @@ create external table customer (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/customer'
+location '/tmp/tpc-ds/sf/customer'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -182,7 +182,7 @@ create external table customer_address (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/customer_address'
+location '/tmp/tpc-ds/sf/customer_address'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -199,7 +199,7 @@ create external table customer_demographics (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/customer_demographics'
+location '/tmp/tpc-ds/sf/customer_demographics'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -235,7 +235,7 @@ create external table date_dim (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/date_dim'
+location '/tmp/tpc-ds/sf/date_dim'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -248,7 +248,7 @@ create external table household_demographics (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/household_demographics'
+location '/tmp/tpc-ds/sf/household_demographics'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -259,7 +259,7 @@ create external table income_band (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/income_band'
+location '/tmp/tpc-ds/sf/income_band'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -271,7 +271,7 @@ create external table inventory (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/inventory'
+location '/tmp/tpc-ds/sf/inventory'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -301,7 +301,7 @@ create external table item (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/item'
+location '/tmp/tpc-ds/sf/item'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -328,7 +328,7 @@ create external table promotion (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/promotion'
+location '/tmp/tpc-ds/sf/promotion'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -339,7 +339,7 @@ create external table reason (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/reason'
+location '/tmp/tpc-ds/sf/reason'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -353,7 +353,7 @@ create external table ship_mode (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/ship_mode'
+location '/tmp/tpc-ds/sf/ship_mode'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -390,7 +390,7 @@ create external table store (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/store'
+location '/tmp/tpc-ds/sf/store'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -418,7 +418,7 @@ create external table store_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/store_returns'
+location '/tmp/tpc-ds/sf/store_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -449,7 +449,7 @@ create external table store_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/store_sales'
+location '/tmp/tpc-ds/sf/store_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -467,7 +467,7 @@ create external table time_dim (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/time_dim'
+location '/tmp/tpc-ds/sf/time_dim'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -489,7 +489,7 @@ create external table warehouse (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/warehouse'
+location '/tmp/tpc-ds/sf/warehouse'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -511,7 +511,7 @@ create external table web_page (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/web_page'
+location '/tmp/tpc-ds/sf/web_page'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -543,7 +543,7 @@ create external table web_returns (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/web_returns'
+location '/tmp/tpc-ds/sf/web_returns'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -585,7 +585,7 @@ create external table web_sales (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/web_sales'
+location '/tmp/tpc-ds/sf/web_sales'
 tblproperties ('serialization.null.format'='')
 ;
 
@@ -619,7 +619,7 @@ create external table web_site (
 )
 row format delimited fields terminated by '|'
 stored as textfile
-location '/tmp/tpc-ds/sf10000/web_site'
+location '/tmp/tpc-ds/sf/web_site'
 tblproperties ('serialization.null.format'='')
 ;
 
