@@ -40,7 +40,7 @@ impala-shell -f impala-parquet.sql
 Load Parquet tables and compute stats:
 
 ```
-impala-shell -f impala-insert_parquet.sql
+impala-shell -f impala-insert-parquet.sql
 ```
 
 Create Kudu tables:
@@ -52,9 +52,9 @@ impala-shell -f impala-kudu.sql
 Load Kudu tables and compute stats:
 
 ```
-impala-shell -f impala-insert_kudu.sql
+impala-shell -f impala-insert-kudu.sql
 ```
 
 ## Step 3: Run Queries
 
-Sample queries from the 10TB scale factor can be found in the `queries/` directory.  The `query-templates/` directory contains the Apache Impala TPC-DS query templates which can be used with `dsqgen` (found in the official TPC-DS tools) to generate queries for other scale factors or to generate more queries with different substitution variables.
+Sample queries from the 100GB scale factor can be found in the `queries/` directory.  The `query-templates/` directory contains the Apache Impala TPC-DS query templates which can be used with `dsqgen` (found in the official TPC-DS tools) to generate queries for other scale factors or to generate more queries with different substitution variables.
